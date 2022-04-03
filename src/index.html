@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端监控</title>
+</head>
+
+<body>
+    <div class="container">
+        <input class="button js" type="button" onclick="btnJsError()" value="JS错误">
+        <input class="button promise" type="button" onclick="btnPromiseError()" value="Promise错误">
+    </div>
+    <script>
+        function btnJsError() {
+            window.someVar.error = 'error'
+        }
+        function btnPromiseError() {
+            new Promise((resolve, reject) => {
+                window.someVar.error = 'error'
+                // reject()
+            })
+        }
+    </script>
+    <script src="someError.js"></script>
+</body>
+
+</html>
